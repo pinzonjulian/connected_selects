@@ -1,0 +1,14 @@
+<turbo-frame id="options_select">
+  <div class="loading">
+    <select name="loading" id="loading" disabled>
+      <option value="loading">Loading...</option>
+    </select>
+  </div>
+  <div class="content">
+    <select name="animal" id="animal" data-action="turbo:frame">
+      <% options.each do |animal| %>
+        <option value="<%= animal %>"><%= animal %></option>
+      <% end %>
+    </select>
+  </div>
+</turbo-frame>

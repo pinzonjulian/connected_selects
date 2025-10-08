@@ -1,0 +1,23 @@
+<style>
+  turbo-frame {
+      & .loading { display: none;}
+      & .content { display: block;}
+      &[aria-busy="true"]{
+        & .loading { display: block; }
+        & .content { display: none; }
+      }
+  }
+</style>
+
+<form action="/" data-controller="form">
+  <fieldset >
+    <select name="speed" id="speed" data-action="form#submit" data-form-submitter-param="submit-as-get">
+      <option value="slow">slow</option>
+      <option value="medium">medium</option>
+      <option value="fast">fast</option>
+    </select>
+    <%= render "animals_select", options: @options %>
+  </fieldset>
+  <button type="submit">Submit</button>
+  <button id="submit-as-get" formaction="/options" formmethod="get" data-turbo-frame="options_select">As get</button>
+</form>
